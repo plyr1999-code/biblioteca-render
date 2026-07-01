@@ -1,0 +1,234 @@
+/* ════════════════════════════════════════════════════════
+   TABLES-GLOBAL.CSS — Solo estructura, sin colores.
+   Los colores son controlados por dark-overrides.css
+   usando html[data-theme="dark/light"]
+   ════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Fuente base ─────────────────────────────────────────── */
+.app-content, .tile, .tile-body, .table, .modal-body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Título de sección ───────────────────────────────────── */
+.app-title {
+    position: relative;
+    padding: 24px 32px 18px;
+    margin-bottom: 8px;
+    animation: globalFadeSlideDown .45s ease both;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.app-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 32px;
+    width: 60px; height: 3px;
+    border-radius: 2px;
+}
+.app-title h1 {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -.01em !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+.app-title h1 i { font-size: 1.3rem; }
+
+/* ── Botones de exportación — layout ─────────────────────── */
+.app-title-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* ── Tile / Card ─────────────────────────────────────────── */
+.tile {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    animation: globalFadeSlideUp .45s ease .1s both;
+    transition: box-shadow .25s ease;
+}
+.tile-body { padding: 20px 24px; }
+
+/* ── Tabla ───────────────────────────────────────────────── */
+.table-responsive { border-radius: 10px; overflow: hidden; }
+.table {
+    width: 100%;
+    border-collapse: collapse !important;
+    font-size: .9rem;
+}
+.table thead th, table.dataTable thead th {
+    font-family: 'Inter', sans-serif !important;
+    white-space: nowrap;
+}
+.table tbody td, table.dataTable tbody td {
+    vertical-align: middle !important;
+    font-size: .9rem;
+}
+.table tbody tr, table.dataTable tbody tr {
+    animation: globalFadeSlideUp .35s ease both;
+    transition: background .15s ease;
+}
+.table tbody tr:last-child { border-bottom: none !important; }
+
+/* Entrada escalonada */
+.table tbody tr:nth-child(1)  { animation-delay: .03s; }
+.table tbody tr:nth-child(2)  { animation-delay: .06s; }
+.table tbody tr:nth-child(3)  { animation-delay: .09s; }
+.table tbody tr:nth-child(4)  { animation-delay: .12s; }
+.table tbody tr:nth-child(5)  { animation-delay: .15s; }
+.table tbody tr:nth-child(6)  { animation-delay: .18s; }
+.table tbody tr:nth-child(7)  { animation-delay: .21s; }
+.table tbody tr:nth-child(8)  { animation-delay: .24s; }
+.table tbody tr:nth-child(n+9){ animation-delay: .27s; }
+
+/* ── Botones pequeños de tabla ───────────────────────────── */
+.btn-sm {
+    font-size: .75rem !important;
+    padding: 5px 11px !important;
+    border-radius: 7px !important;
+    cursor: pointer;
+    transition: all .18s ease !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    animation: none !important;
+}
+
+/* ── Badge ───────────────────────────────────────────────── */
+.badge {
+    font-family: 'Inter', sans-serif !important;
+    font-size: .68rem !important;
+    letter-spacing: .04em !important;
+    padding: 4px 10px !important;
+    border-radius: 20px !important;
+    font-weight: 600 !important;
+}
+
+/* ── DataTables ──────────────────────────────────────────── */
+.dataTables_wrapper .dataTables_length label,
+.dataTables_wrapper .dataTables_filter label,
+.dataTables_wrapper .dataTables_info {
+    font-family: 'Inter', sans-serif !important;
+    font-size: .88rem;
+}
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select {
+    border-radius: 8px !important;
+    font-family: 'Inter', sans-serif !important;
+    padding: 5px 10px !important;
+    transition: border-color .2s, box-shadow .2s;
+}
+.dataTables_wrapper .dataTables_filter input:focus,
+.dataTables_wrapper .dataTables_length select:focus {
+    outline: none !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    font-family: 'Inter', sans-serif !important;
+    font-size: .78rem !important;
+    border-radius: 6px !important;
+    padding: 5px 10px !important;
+    transition: all .18s ease !important;
+}
+
+/* ── Modal ───────────────────────────────────────────────── */
+.modal-content { border-radius: 16px !important; overflow: hidden; }
+.modal-header { padding: 16px 24px !important; }
+.modal-header .modal-title {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+}
+.modal-header .close {
+    opacity: 1 !important;
+    font-size: 1.4rem !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    transition: color .2s ease !important;
+}
+.modal-body { padding: 24px !important; }
+
+/* ── Form labels ─────────────────────────────────────────── */
+.modal-body .form-group label, .form-group label {
+    font-family: 'Inter', sans-serif !important;
+    font-size: .75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: .04em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 6px;
+}
+.modal-body .form-control, .form-control {
+    font-family: 'Inter', sans-serif !important;
+    font-size: .9rem !important;
+    padding: 9px 12px !important;
+    border-radius: 8px !important;
+    transition: border-color .22s ease, box-shadow .22s ease !important;
+    width: 100%;
+}
+
+/* ── Select2 ─────────────────────────────────────────────── */
+.select2-container { width: 100% !important; }
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    border-radius: 8px !important;
+    height: auto !important;
+    min-height: 40px !important;
+    padding: 4px 6px !important;
+    transition: border-color .22s ease, box-shadow .22s ease !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 38px !important;
+    right: 10px !important;
+}
+.select2-dropdown {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    z-index: 9999 !important;
+    min-width: 260px !important;
+}
+.select2-results__option {
+    font-family: 'Inter', sans-serif !important;
+    font-size: .9rem !important;
+    padding: 8px 12px !important;
+}
+.select2-search--dropdown .select2-search__field {
+    border-radius: 4px !important;
+    font-family: 'Inter', sans-serif !important;
+    padding: 6px 10px !important;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { border-radius: 3px; }
+
+/* ── Animaciones ─────────────────────────────────────────── */
+@keyframes globalFadeSlideDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes globalFadeSlideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .app-title { padding: 18px 16px 14px; }
+    .app-title h1 { font-size: 1.3rem !important; }
+    .tile-body { padding: 14px 16px; }
+}
